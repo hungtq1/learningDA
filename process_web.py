@@ -54,7 +54,7 @@ top10_cb = df.groupby(['VanPhong', 'UserLayMau']).agg(total_Revenue=("TongTienBL
 top10_cb = top10_cb.sort_values('total_Revenue', ascending=False)
 fig = px.bar(top10_cb, x='UserLayMau', y = "total_Revenue", text="VanPhong", color='total_Revenue')
 st.plotly_chart(fig)
-fig.write_image("top10_revenue_byunits.png")
+#fig.write_image("top10_revenue_byunits.png")
 
 # top10_cb.to_excel("top10_cb_web.xlsx", index= False)
 # wb = openpyxl.load_workbook("top10_cb_web.xlsx")
