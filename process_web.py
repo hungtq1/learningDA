@@ -1,17 +1,8 @@
 
 import pandas as pd
-from sklearn import datasets
-import seaborn as sns
 import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
-from openpyxl import Workbook
-import matplotlib.patches as mpatches
-from scipy import stats
-import openpyxl
 import streamlit as st
 import plotly.express as px
-
 
 df = pd.read_csv('data/data_process.csv')
 samples, features = df.shape
