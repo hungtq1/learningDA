@@ -95,7 +95,6 @@ st.plotly_chart(fig)
 
 #define categories cilumns
 categorical_columns = ['TrangThaiXem', 'TuVan', 'TrangThaiGui', 'TrangThaiSMSKQ']
-fig, axes = plt.subplots(4,2, figsize=(20,30))
 idx = 0
 for col in categorical_columns:
     fig = px.bar(df, x=col, y = col)
