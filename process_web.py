@@ -1,29 +1,16 @@
-import pyodbc 
+
 import pandas as pd
-import numpy as np
 from sklearn import datasets
 import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
-import time
-import sys
 from openpyxl import Workbook
 import matplotlib.patches as mpatches
 from scipy import stats
 import openpyxl
 import streamlit as st
 import plotly.express as px
-
-from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import train_test_split, cross_val_score, GridSearchCV, StratifiedKFold
-from sklearn.linear_model import LogisticRegression
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.svm import SVC
-from sklearn.metrics import accuracy_score, confusion_matrix, ConfusionMatrixDisplay, classification_report
-from sklearn.metrics import roc_curve, roc_auc_score, precision_score, recall_score, f1_score, RocCurveDisplay
 
 
 df = pd.read_csv('data/data_process.csv')
@@ -79,15 +66,15 @@ fig = px.bar(top10_cb, x='UserLayMau', y = "total_Revenue", text="VanPhong", col
 st.plotly_chart(fig)
 fig.write_image("top10_revenue_byunits.png")
 
-top10_cb.to_excel("top10_cb_web.xlsx", index= False)
-wb = openpyxl.load_workbook("top10_cb_web.xlsx")
-wb.worksheets[0].title = "data"
-chart = wb[wb.sheetnames[0]]
-img = openpyxl.drawing.image.Image("top10_revenue_byunits.png")
-img.anchor = "D2"
-chart.add_image(img)
-chart.cell(row = 1, column = 4).value = "Top 10 Revenue Employee by Units" #This will change the cell(2,4) to 4
-wb.save("top10_cb_web.xlsx")
+# top10_cb.to_excel("top10_cb_web.xlsx", index= False)
+# wb = openpyxl.load_workbook("top10_cb_web.xlsx")
+# wb.worksheets[0].title = "data"
+# chart = wb[wb.sheetnames[0]]
+# img = openpyxl.drawing.image.Image("top10_revenue_byunits.png")
+# img.anchor = "D2"
+# chart.add_image(img)
+# chart.cell(row = 1, column = 4).value = "Top 10 Revenue Employee by Units" #This will change the cell(2,4) to 4
+# wb.save("top10_cb_web.xlsx")
 
 
 st.title('Total Status Open SMS/ Not Open SMS by Units')
